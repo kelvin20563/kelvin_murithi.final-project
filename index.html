@@ -314,32 +314,129 @@
             </div>
             
             <div class="partners-slider">
-                <div class="partners-track">
+                <div class="partners-track"><div class="relative group">
+            <!-- Controls -->
+            <div class="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between z-10 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button id="prevBtn" class="bg-cafe-brown text-white p-3 rounded-full shadow-lg hover:bg-cafe-accent transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" class="bg-cafe-brown text-white p-3 rounded-full shadow-lg hover:bg-cafe-accent transition-colors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Pause/Resume Button -->
+            <div class="absolute top-4 right-4 z-10">
+                <button id="pauseBtn" class="bg-white/80 backdrop-blur-sm text-cafe-brown p-2 rounded-full shadow-md hover:bg-white transition-colors">
+                    <i class="fas fa-pause"></i>
+                </button>
+            </div>
+            
+            <!-- Carousel Container -->
+            <div id="carousel" class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-cafe-light overflow-hidden">
+                <!-- Logo Track 1 -->
+                <div class="logo-track flex space-x-6 mb-6 animate-scroll">
                     <!-- Partner Logos - Set 1 -->
-                    <img src="https://cdn.freebiesupply.com/logos/large/2x/blue-bottle-coffee-logo-png-transparent.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://logos-world.net/wp-content/uploads/2020/12/Lavazza-Logo.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Illy_logo.svg/1200px-Illy_logo.svg.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Stumptown_Coffee_Roasters_logo.svg/1200px-Stumptown_Coffee_Roasters_logo.svg.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Intelligentsia_Coffee_logo.svg/2560px-Intelligentsia_Coffee_logo.svg.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://logos-world.net/wp-content/uploads/2021/08/Peets-Coffee-Logo.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Caribou_Coffee_logo.svg/1200px-Caribou_Coffee_logo.svg.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Death_Wish_Coffee_Logo.png/800px-Death_Wish_Coffee_Logo.png" alt="Coffee Supplier" class="partner-logo">
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-coffee text-4xl mb-2"></i>
+                            <p class="font-semibold">Bean Co.</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-bread-slice text-4xl mb-2"></i>
+                            <p class="font-semibold">Sweet Bakery</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-cheese text-4xl mb-2"></i>
+                            <p class="font-semibold">Dairy Delight</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-cookie text-4xl mb-2"></i>
+                            <p class="font-semibold">Cookie Haven</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-mug-hot text-4xl mb-2"></i>
+                            <p class="font-semibold">Mug & Co</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-ice-cream text-4xl mb-2"></i>
+                            <p class="font-semibold">Frosty Treats</p>
+                        </div>
+                    </div>
                     
                     <!-- Duplicate Set for Seamless Looping -->
-                    <img src="https://cdn.freebiesupply.com/logos/large/2x/blue-bottle-coffee-logo-png-transparent.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://logos-world.net/wp-content/uploads/2020/12/Lavazza-Logo.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Illy_logo.svg/1200px-Illy_logo.svg.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Stumptown_Coffee_Roasters_logo.svg/1200px-Stumptown_Coffee_Roasters_logo.svg.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Intelligentsia_Coffee_logo.svg/2560px-Intelligentsia_Coffee_logo.svg.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://logos-world.net/wp-content/uploads/2021/08/Peets-Coffee-Logo.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Caribou_Coffee_logo.svg/1200px-Caribou_Coffee_logo.svg.png" alt="Coffee Supplier" class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Death_Wish_Coffee_Logo.png/800px-Death_Wish_Coffee_Logo.png" alt="Coffee Supplier" class="partner-logo">
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-coffee text-4xl mb-2"></i>
+                            <p class="font-semibold">Bean Co.</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-bread-slice text-4xl mb-2"></i>
+                            <p class="font-semibold">Sweet Bakery</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-cheese text-4xl mb-2"></i>
+                            <p class="font-semibold">Dairy Delight</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-cookie text-4xl mb-2"></i>
+                            <p class="font-semibold">Cookie Haven</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-mug-hot text-4xl mb-2"></i>
+                            <p class="font-semibold">Mug & Co</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-ice-cream text-4xl mb-2"></i>
+                            <p class="font-semibold">Frosty Treats</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                
+
+
+
+
+
+
+                
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+    
+        
+                         
+                
         </div>
     </section>
 
-    <!-- FAQ Section -->
+   
     <section id="faq" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-16">
@@ -348,7 +445,7 @@
             </div>
             
             <div class="space-y-4">
-                <!-- FAQ Item 1 -->
+            
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3 class="text-xl font-semibold" style="color: var(--coffee-800);">How do I make a reservation?</h3>
@@ -361,7 +458,7 @@
                     </div>
                 </div>
                 
-                <!-- FAQ Item 2 -->
+            
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3 class="text-xl font-semibold" style="color: var(--coffee-800);">Do you offer gluten-free options?</h3>
@@ -373,8 +470,7 @@
                         <p class="mt-4" style="color: var(--coffee-700);">Yes, we have a variety of gluten-free pastries and snacks available daily. Our menu clearly marks gluten-free items, and our staff is trained to answer any dietary questions you may have. Please note that while we take precautions, our kitchen does handle gluten-containing ingredients.</p>
                     </div>
                 </div>
-                
-                <!-- FAQ Item 3 -->
+            
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3 class="text-xl font-semibold" style="color: var(--coffee-800);">Where do you source your coffee beans?</h3>
@@ -383,7 +479,7 @@
                         </div>
                     </div>
                     <div class="faq-answer">
-                        <p class="mt-4" style="color: var(--coffee-700);">We partner directly with small-scale farmers in Colombia, Ethiopia, and Brazil who practice sustainable farming. Our beans are ethically sourced through Fair Trade agreements, and we roast them in-house weekly to ensure maximum freshness and flavor.</p>
+                        <p class="mt-4" style="color: var(--coffee-700);">We partner directly with small scale farmers in Colombia, Ethiopia, and Brazil who practice sustainable farming. Our beans are ethically sourced through Fair Trade agreements, and we roast them in-house weekly to ensure maximum freshness and flavor.</p>
                     </div>
                 </div>
             </div>
@@ -405,7 +501,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold" style="color: var(--coffee-800);">Location</h4>
-                                <p style="color: var(--coffee-700);">123 Coffee Street, Brewville, CA 90210</p>
+                                <p style="color: var(--coffee-700);"> 406 Coffee Street, parklands,Kenya</p>
                             </div>
                         </div>
                         
@@ -415,7 +511,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold" style="color: var(--coffee-800);">Phone</h4>
-                                <p style="color: var(--coffee-700);">+1 (555) 123-4567</p>
+                                <p style="color: var(--coffee-700);">+254(7) 00350007</p>
                             </div>
                         </div>
                         
@@ -467,7 +563,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+   
     <footer class="py-12" style="background-color: var(--coffee-800); color: white;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8">
@@ -517,7 +613,7 @@
             </div>
             
             <div class="mt-12 pt-8 text-center" style="border-top: 1px solid var(--coffee-700); color: var(--coffee-400);">
-                <p>&copy; 2023 Brew Haven Café. All rights reserved.</p>
+                <p>&copy; 2025 Brew Haven Café. All rights reserved.</p>
                 <div class="mt-4 flex justify-center gap-6">
                     <a href="#" class="hover:text-white transition">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition">Terms of Service</a>
@@ -528,13 +624,17 @@
     </footer>
 
     <script>
-        // Collapsible FAQ functionality
+       // Collapsible FAQ functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
                 faqItem.classList.toggle('active');
             });
         });
+            
+            
+    
+        
     </script>
 </body>
 </html>
