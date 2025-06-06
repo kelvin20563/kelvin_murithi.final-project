@@ -1,6 +1,7 @@
 # kelvin_murithi.final-project
 
      my final project
+cafe Haven website
 
 Key Features of the Cafe Website Modern, Responsive Design - Fully mobile-friendly layout that works on all devices
 
