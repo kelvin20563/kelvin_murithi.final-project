@@ -1,770 +1,641 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Haven Cafe | Light Blue Theme</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Brew Haven Café</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --coffee-100: #f5ebe0;
+            --coffee-200: #e6d5c3;
+            --coffee-300: #d4c0a1;
+            --coffee-400: #c2ab8e;
+            --coffee-500: #a68a64;
+            --coffee-600: #8b6b46;
+            --coffee-700: #6f5738;
+            --coffee-800: #55432a;
+            --coffee-900: #3a2f1c;
         }
         
-        body {
-            background: linear-gradient(135deg, #e6f7ff 0%, #b3e0ff 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            color: #0d47a1;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(30, 136, 229, 0.15);
-            overflow: hidden;
-            position: relative;
-            margin: 20px auto;
-        }
-        
-        .container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
-            background: linear-gradient(90deg, #1e88e5, #64b5f6, #bbdefb, #64b5f6, #1e88e5);
-        }
-        
-        header {
-            padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo i {
-            font-size: 2.5rem;
-            color: #1e88e5;
-        }
-        
-        .logo h1 {
-            font-size: 2.2rem;
-            color: #0d47a1;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #1976d2;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 8px 15px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        nav a:hover, nav a.active {
-            background: linear-gradient(to right, #1e88e5, #64b5f6);
-            color: white;
-        }
-        
-        .hero {
-            padding: 60px 40px;
-            text-align: center;
-            background: linear-gradient(rgba(179, 224, 255, 0.3), rgba(179, 224, 255, 0.3)), url('https://images.unsplash.com/photo-1554119921-6c2bf7b03c75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
             background-size: cover;
             background-position: center;
-            position: relative;
-            border-radius: 0 0 20px 20px;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h2 {
-            font-size: 3.5rem;
-            color: #0d47a1;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            color: #1565c0;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn {
-            padding: 14px 30px;
-            background: linear-gradient(to right, #1e88e5, #64b5f6);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(30, 136, 229, 0.4);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(30, 136, 229, 0.5);
-        }
-        
-        .btn:active {
-            transform: translateY(1px);
-        }
-        
-        .btn i {
-            font-size: 1.1rem;
-        }
-        
-        .section {
-            padding: 60px 40px;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: #0d47a1;
-            margin-bottom: 15px;
-        }
-        
-        .section-header p {
-            color: #1976d2;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
         }
         
         .menu-item {
-            background: linear-gradient(145deg, #e3f2fd, #bbdefb);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 6px 20px rgba(30, 136, 229, 0.2);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(100, 181, 246, 0.3);
-            display: flex;
-            flex-direction: column;
+            transition: all 0.3s ease;
         }
-        
         .menu-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(30, 136, 229, 0.3);
-            background: linear-gradient(145deg, #d1e8ff, #a8d4ff);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
         
-        .menu-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            margin-bottom: 20px;
+        .testimonial-card {
+            background: linear-gradient(to bottom right, var(--coffee-100), var(--coffee-200));
         }
         
-        .menu-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #0d47a1;
+        .faq-item {
+            border-bottom: 1px solid var(--coffee-200);
+            padding: 20px 0;
         }
-        
-        .menu-content p {
-            color: #1565c0;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1e88e5;
-            margin-top: auto;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .about-text p {
-            color: #1565c0;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .about-img {
-            height: 350px;
-            background: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(30, 136, 229, 0.3);
-        }
-        
-        .hours-location {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        
-        .hours, .location {
-            background: linear-gradient(145deg, #e3f2fd, #bbdefb);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 6px 20px rgba(30, 136, 229, 0.2);
-            border: 1px solid rgba(100, 181, 246, 0.3);
-        }
-        
-        .hours h3, .location h3 {
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            color: #0d47a1;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .hours h3 i, .location h3 i {
-            background: #64b5f6;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        
-        .hours ul {
-            list-style: none;
-        }
-        
-        .hours li {
+        .faq-question {
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px dashed rgba(30, 136, 229, 0.3);
-            color: #1565c0;
-            font-size: 1.1rem;
-        }
-        
-        .hours li:last-child {
-            border-bottom: none;
-        }
-        
-        .location p {
-            color: #1565c0;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        .map {
-            height: 250px;
-            background: url('https://images.unsplash.com/photo-1587334274328-64186a80aeee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-        
-        .testimonials {
-            background: linear-gradient(rgba(179, 224, 255, 0.3), rgba(179, 224, 255, 0.3));
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 6px 20px rgba(30, 136, 229, 0.2);
-            border: 1px solid rgba(100, 181, 246, 0.3);
-        }
-        
-        .testimonial p {
-            color: #1565c0;
-            font-style: italic;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        .customer {
-            display: flex;
             align-items: center;
-            gap: 15px;
+            padding-right: 15px;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
         }
         
-        .customer-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #64b5f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-        
-        .customer-info h4 {
-            color: #0d47a1;
-        }
-        
-        .customer-info p {
-            color: #1e88e5;
-            font-style: normal;
-            margin: 0;
-        }
-        
-        footer {
-            background: linear-gradient(90deg, #1e88e5, #64b5f6);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            border-radius: 0 0 20px 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            text-align: left;
-            max-width: 1200px;
-            margin: 0 auto 30px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+        /* Partners slider */
+        .partners-slider {
+            overflow: hidden;
             position: relative;
-            display: inline-block;
+            width: 100%;
         }
         
-        .footer-section h3::after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: white;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: #e3f2fd;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .partners-track {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            animation: slide 30s linear infinite;
+            width: 200%;
         }
         
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            color: white;
+        .partner-logo {
+            height: 80px;
+            width: auto;
+            margin: 0 40px;
+            filter: grayscale(100%);
+            opacity: 0.7;
             transition: all 0.3s ease;
         }
         
-        .social-links a:hover {
-            background: white;
-            color: #1e88e5;
-            transform: translateY(-5px);
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
         }
         
-        .copyright {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.9rem;
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
         
-        @media (max-width: 900px) {
-            .about-content, .hours-location {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-img {
-                height: 250px;
-            }
-            
-            .hero h2 {
-                font-size: 2.8rem;
-            }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
         
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section {
-                padding: 40px 20px;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
-            }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--coffee-100);
+            color: var(--coffee-800);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <i class="fas fa-mug-hot"></i>
-                <h1>Blue Haven Cafe</h1>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-3xl font-bold" style="color: var(--coffee-700);">Brew Haven</div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#hours">Hours</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h2>Experience Coffee Perfection</h2>
-                <p>Specialty coffee, artisan pastries, and a relaxing atmosphere in the heart of the city</p>
-                <button class="btn">
-                    <i class="fas fa-book-open"></i> View Our Menu
+            <div class="mt-4 md:mt-0 flex gap-8">
+                <a href="#home" style="color: var(--coffee-700);" class="hover:opacity-75 transition">Home</a>
+                <a href="#about" style="color: var(--coffee-700);" class="hover:opacity-75 transition">About</a>
+                <a href="#menu" style="color: var(--coffee-700);" class="hover:opacity-75 transition">Menu</a>
+                <a href="#partners" style="color: var(--coffee-700);" class="hover:opacity-75 transition">Partners</a>
+                <a href="#faq" style="color: var(--coffee-700);" class="hover:opacity-75 transition">FAQ</a>
+                <a href="#contact" style="color: var(--coffee-700);" class="hover:opacity-75 transition">Contact</a>
+            </div>
+            <button class="mt-4 md:mt-0 px-6 py-2 rounded-full transition" style="background-color: var(--coffee-600); color: white;">Reserve a Table</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Discover the Art of <span class="text-amber-300">Perfect Coffee</span></h1>
+            <p class="text-xl max-w-2xl mx-auto mb-10">Experience specialty coffee in a warm, inviting atmosphere where every cup tells a story.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="px-8 py-3 rounded-full font-semibold" style="background-color: #e0b000; color: var(--coffee-900);">View Our Menu</button>
+                <button class="bg-transparent border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-coffee-800 transition">Book a Tasting</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6" style="color: var(--coffee-800);">Our Coffee Journey</h2>
+                <p class="mb-6" style="color: var(--coffee-700);">Founded in 2010, Brew Haven began as a small passion project between friends who shared a love for exceptional coffee. Today, we've grown into a community hub where coffee enthusiasts gather to savor carefully crafted beverages.</p>
+                <p class="mb-8" style="color: var(--coffee-700);">We source our beans directly from ethical farms across South America and Africa, roasting them in-house to bring out their unique characteristics. Every cup is brewed with precision and care by our skilled baristas.</p>
+                <div class="flex gap-4">
+                    <button class="px-6 py-2 rounded-full transition" style="background-color: var(--coffee-700); color: white;">Our Story</button>
+                    <button class="border-2 px-6 py-2 rounded-full transition" style="border-color: var(--coffee-700); color: var(--coffee-700);">Meet Our Team</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Coffee beans" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Barista making coffee" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden col-span-2">
+                    <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80" alt="Cafe interior" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20" style="background-color: var(--coffee-200);">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4" style="color: var(--coffee-800);">Our Specialty Menu</h2>
+                <p class="max-w-2xl mx-auto" style="color: var(--coffee-700);">From classic espresso to innovative seasonal creations, each drink is crafted with premium ingredients and expert technique.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-2xl font-bold" style="color: var(--coffee-800);">Espresso Classics</h3>
+                            <span class="px-3 py-1 rounded-full text-sm" style="background-color: #fef3c7; color: #92400e;">Bestseller</span>
+                        </div>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Espresso</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Pure, concentrated coffee</p>
+                                </div>
+                                <span class="font-semibold">$3.50</span>
+                            </li>
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Cappuccino</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Espresso with steamed milk</p>
+                                </div>
+                                <span class="font-semibold">$4.75</span>
+                            </li>
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Latte</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Espresso with steamed milk</p>
+                                </div>
+                                <span class="font-semibold">$5.00</span>
+                            </li>
+                            <li class="flex justify-between pb-2">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Mocha</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Chocolate espresso</p>
+                                </div>
+                                <span class="font-semibold">$5.50</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold" style="color: var(--coffee-800);">Seasonal Specialties</h3>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Pumpkin Spice Latte</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Seasonal favorite</p>
+                                </div>
+                                <span class="font-semibold">$6.00</span>
+                            </li>
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Iced Lavender Mocha</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Floral and refreshing</p>
+                                </div>
+                                <span class="font-semibold">$6.25</span>
+                            </li>
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Maple Pecan Latte</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Autumn special</p>
+                                </div>
+                                <span class="font-semibold">$5.75</span>
+                            </li>
+                            <li class="flex justify-between pb-2">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Cold Brew Tonic</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Refreshing summer drink</p>
+                                </div>
+                                <span class="font-semibold">$5.50</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold" style="color: var(--coffee-800);">Pastries & Treats</h3>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Croissant</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Buttery and flaky</p>
+                                </div>
+                                <span class="font-semibold">$3.50</span>
+                            </li>
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Cinnamon Roll</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Freshly baked daily</p>
+                                </div>
+                                <span class="font-semibold">$4.50</span>
+                            </li>
+                            <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Chocolate Brownie</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Rich and fudgy</p>
+                                </div>
+                                <span class="font-semibold">$4.00</span>
+                            </li>
+                            <li class="flex justify-between pb-2">
+                                <div>
+                                    <h4 class="font-semibold" style="color: var(--coffee-800);">Blueberry Muffin</h4>
+                                    <p class="text-sm" style="color: var(--coffee-600);">Bursting with berries</p>
+                                </div>
+                                <span class="font-semibold">$3.75</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 rounded-full font-semibold" style="background-color: var(--coffee-700); color: white;">View Full Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Partners Section -->
+    <section id="partners" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4" style="color: var(--coffee-800);">Our Trusted Partners</h2>
+                <p class="max-w-2xl mx-auto" style="color: var(--coffee-600);">We work with the best suppliers to bring you exceptional coffee experiences</p>
+            </div>
+            
+            <div class="partners-slider">
+                <div class="partners-track"><div class="relative group">
+            <!-- Controls -->
+            <div class="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between z-10 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button id="prevBtn" class="bg-cafe-brown text-white p-3 rounded-full shadow-lg hover:bg-cafe-accent transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" class="bg-cafe-brown text-white p-3 rounded-full shadow-lg hover:bg-cafe-accent transition-colors">
+                    <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
-        </section>
-        
-        <section class="section" id="menu">
-            <div class="section-header">
-                <h2>Our Signature Menu</h2>
-                <p>Handcrafted with premium ingredients and served with passion</p>
+            
+            <!-- Pause/Resume Button -->
+            <div class="absolute top-4 right-4 z-10">
+                <button id="pauseBtn" class="bg-white/80 backdrop-blur-sm text-cafe-brown p-2 rounded-full shadow-md hover:bg-white transition-colors">
+                    <i class="fas fa-pause"></i>
+                </button>
             </div>
             
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="menu-content">
-                        <h3>Blue Sky Latte</h3>
-                        <p>Our signature espresso with blue matcha, steamed milk, and a hint of vanilla</p>
-                        <span class="price">$5.50</span>
+            <!-- Carousel Container -->
+            <div id="carousel" class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-cafe-light overflow-hidden">
+                <!-- Logo Track 1 -->
+                <div class="logo-track flex space-x-6 mb-6 animate-scroll">
+                    <!-- Partner Logos - Set 1 -->
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-coffee text-4xl mb-2"></i>
+                            <p class="font-semibold">Bean Co.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1554119921-6c2bf7b03c75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="menu-content">
-                        <h3>Avocado Toast Delight</h3>
-                        <p>Sourdough toast topped with fresh avocado, cherry tomatoes, and microgreens</p>
-                        <span class="price">$8.95</span>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-bread-slice text-4xl mb-2"></i>
+                            <p class="font-semibold">Sweet Bakery</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="menu-content">
-                        <h3>Berry Bliss Pancakes</h3>
-                        <p>Fluffy buttermilk pancakes with mixed berries and maple syrup</p>
-                        <span class="price">$9.75</span>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-cheese text-4xl mb-2"></i>
+                            <p class="font-semibold">Dairy Delight</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1519861531473-9200262188bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="menu-content">
-                        <h3>Ocean Breeze Smoothie</h3>
-                        <p>Blue spirulina, banana, pineapple, and coconut milk blended to perfection</p>
-                        <span class="price">$6.95</span>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-cookie text-4xl mb-2"></i>
+                            <p class="font-semibold">Cookie Haven</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section" id="about">
-            <div class="section-header">
-                <h2>Our Story</h2>
-                <p>Discover the passion behind every cup we serve</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Founded in 2018, Blue Haven Cafe began as a dream to create a space where coffee lovers could find exceptional brews in a serene, welcoming environment. Our founder, Sarah Johnson, envisioned a cafe that combined specialty coffee with a calming blue-themed aesthetic.</p>
-                    <p>We source our beans directly from sustainable farms in Colombia, Ethiopia, and Brazil, ensuring fair trade practices and the highest quality. Each bean is carefully roasted in-house to bring out its unique flavor profile.</p>
-                    <p>At Blue Haven, we believe in the art of coffee making. Our baristas are trained for months to master the perfect espresso extraction, milk texturing, and latte art techniques. We're committed to creating memorable experiences, one cup at a time.</p>
-                    <button class="btn">
-                        <i class="fas fa-coffee"></i> Learn More
-                    </button>
-                </div>
-                <div class="about-img"></div>
-            </div>
-        </section>
-        
-        <section class="section" id="hours">
-            <div class="section-header">
-                <h2>Visit Us</h2>
-                <p>We're looking forward to serving you at our cozy location</p>
-            </div>
-            
-            <div class="hours-location">
-                <div class="hours">
-                    <h3><i class="fas fa-clock"></i> Opening Hours</h3>
-                    <ul>
-                        <li><span>Monday - Friday</span> <span>7:00 AM - 8:00 PM</span></li>
-                        <li><span>Saturday</span> <span>8:00 AM - 9:00 PM</span></li>
-                        <li><span>Sunday</span> <span>8:00 AM - 6:00 PM</span></li>
-                        <li><span>Holidays</span> <span>9:00 AM - 5:00 PM</span></li>
-                    </ul>
-                </div>
-                
-                <div class="location">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
-                    <p><i class="fas fa-building"></i> 123 Ocean Avenue, Seaside District</p>
-                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> hello@bluehavencafe.com</p>
-                    <div class="map"></div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section testimonials" id="testimonials">
-            <div class="section-header">
-                <h2>Customer Love</h2>
-                <p>What our customers say about their experience</p>
-            </div>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p>"The Blue Sky Latte is absolute perfection! The ambiance is so calming with the beautiful blue decor. My new favorite spot in the city!"</p>
-                    <div class="customer">
-                        <div class="customer-img"><i class="fas fa-user"></i></div>
-                        <div class="customer-info">
-                            <h4>Michael Rodriguez</h4>
-                            <p>Regular Customer</p>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-mug-hot text-4xl mb-2"></i>
+                            <p class="font-semibold">Mug & Co</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-ice-cream text-4xl mb-2"></i>
+                            <p class="font-semibold">Frosty Treats</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate Set for Seamless Looping -->
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-coffee text-4xl mb-2"></i>
+                            <p class="font-semibold">Bean Co.</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-bread-slice text-4xl mb-2"></i>
+                            <p class="font-semibold">Sweet Bakery</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-cheese text-4xl mb-2"></i>
+                            <p class="font-semibold">Dairy Delight</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-cookie text-4xl mb-2"></i>
+                            <p class="font-semibold">Cookie Haven</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-mug-hot text-4xl mb-2"></i>
+                            <p class="font-semibold">Mug & Co</p>
+                        </div>
+                    </div>
+                    <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
+                        <div class="text-cafe-brown text-center">
+                            <i class="fas fa-ice-cream text-4xl mb-2"></i>
+                            <p class="font-semibold">Frosty Treats</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial">
-                    <p>"Best avocado toast I've ever had! The coffee is exceptional and the staff is always friendly. Highly recommend for breakfast meetings."</p>
-                    <div class="customer">
-                        <div class="customer-img"><i class="fas fa-user"></i></div>
-                        <div class="customer-info">
-                            <h4>Jennifer Kim</h4>
-                            <p>Food Blogger</p>
+
+
+
+
+
+
+                
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial">
-                    <p>"The atmosphere is so relaxing with the beautiful blue tones. I come here every Sunday to read and enjoy their amazing pastries. A true hidden gem!"</p>
-                    <div class="customer">
-                        <div class="customer-img"><i class="fas fa-user"></i></div>
-                        <div class="customer-info">
-                            <h4>David Thompson</h4>
-                            <p>Local Artist</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <footer id="contact">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Blue Haven Cafe</h3>
-                    <p>Specialty coffee and artisan pastries in a serene, blue-themed environment. We're dedicated to quality, sustainability, and creating memorable experiences.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#menu"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#hours"><i class="fas fa-chevron-right"></i> Hours & Location</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Ocean Avenue, Seaside</a></li>
-                        <li><a href="tel:5551234567"><i class="fas fa-phone"></i> (555) 123-4567</a></li>
-                        <li><a href="mailto:hello@bluehavencafe.com"><i class="fas fa-envelope"></i> hello@bluehavencafe.com</a></li>
-                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 7am-8pm</a></li>
-                        <li><a href="#"><i class="fas fa-clock"></i> Sat-Sun: 8am-9pm</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Blue Haven Cafe. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i></p>
-            </div>
-        </footer>
-    </div>
+
+
+
+
+
+
+
     
+        
+                         
+                
+        </div>
+    </section>
+
+   
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4" style="color: var(--coffee-800);">Frequently Asked Questions</h2>
+                <p class="max-w-2xl mx-auto" style="color: var(--coffee-600);">Find answers to common questions about our cafe, coffee, and services.</p>
+            </div>
+            
+            <div class="space-y-4">
+            
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="text-xl font-semibold" style="color: var(--coffee-800);">How do I make a reservation?</h3>
+                        <div class="faq-icon" style="color: #e0b000;">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="mt-4" style="color: var(--coffee-700);">You can make a reservation through our website, by calling us directly at (555) 123-4567, or by visiting our cafe in person. We recommend booking at least 24 hours in advance for weekend brunches and special events.</p>
+                    </div>
+                </div>
+                
+            
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="text-xl font-semibold" style="color: var(--coffee-800);">Do you offer gluten-free options?</h3>
+                        <div class="faq-icon" style="color: #e0b000;">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="mt-4" style="color: var(--coffee-700);">Yes, we have a variety of gluten-free pastries and snacks available daily. Our menu clearly marks gluten-free items, and our staff is trained to answer any dietary questions you may have. Please note that while we take precautions, our kitchen does handle gluten-containing ingredients.</p>
+                    </div>
+                </div>
+            
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="text-xl font-semibold" style="color: var(--coffee-800);">Where do you source your coffee beans?</h3>
+                        <div class="faq-icon" style="color: #e0b000;">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="mt-4" style="color: var(--coffee-700);">We partner directly with small scale farmers in Colombia, Ethiopia, and Brazil who practice sustainable farming. Our beans are ethically sourced through Fair Trade agreements, and we roast them in-house weekly to ensure maximum freshness and flavor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20" style="background-color: var(--coffee-100);">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6" style="color: var(--coffee-800);">We'd Love to Hear From You</h2>
+                    <p class="mb-8" style="color: var(--coffee-700);">Have questions about our coffee, want to book an event, or just want to say hello? Reach out anytime.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="p-3 rounded-full mr-4" style="background-color: #fef3c7;">
+                                <i class="fas fa-map-marker-alt text-xl" style="color: #e0b000;"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" style="color: var(--coffee-800);">Location</h4>
+                                <p style="color: var(--coffee-700);"> 406 Coffee Street, parklands,Kenya</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="p-3 rounded-full mr-4" style="background-color: #fef3c7;">
+                                <i class="fas fa-phone text-xl" style="color: #e0b000;"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" style="color: var(--coffee-800);">Phone</h4>
+                                <p style="color: var(--coffee-700);">+254(7) 00350007</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="p-3 rounded-full mr-4" style="background-color: #fef3c7;">
+                                <i class="fas fa-envelope text-xl" style="color: #e0b000;"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" style="color: var(--coffee-800);">Email</h4>
+                                <p style="color: var(--coffee-700);">hello@brewhaven.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="p-3 rounded-full mr-4" style="background-color: #fef3c7;">
+                                <i class="fas fa-clock text-xl" style="color: #e0b000;"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" style="color: var(--coffee-800);">Hours</h4>
+                                <p style="color: var(--coffee-700);">Monday-Friday: 7am-7pm</p>
+                                <p style="color: var(--coffee-700);">Saturday-Sunday: 8am-8pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6" style="color: var(--coffee-800);">Send Us a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block mb-2" style="color: var(--coffee-700);">Name</label>
+                            <input type="text" class="w-full p-3 rounded-lg focus:outline-none focus:ring-2" style="border: 1px solid var(--coffee-300);">
+                        </div>
+                        
+                        <div>
+                            <label class="block mb-2" style="color: var(--coffee-700);">Email</label>
+                            <input type="email" class="w-full p-3 rounded-lg focus:outline-none focus:ring-2" style="border: 1px solid var(--coffee-300);">
+                        </div>
+                        
+                        <div>
+                            <label class="block mb-2" style="color: var(--coffee-700);">Message</label>
+                            <textarea rows="4" class="w-full p-3 rounded-lg focus:outline-none focus:ring-2" style="border: 1px solid var(--coffee-300);"></textarea>
+                        </div>
+                        
+                        <button class="w-full py-3 rounded-lg font-semibold transition" style="background-color: var(--coffee-700); color: white;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <footer class="py-12" style="background-color: var(--coffee-800); color: white;">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Brew Haven</h3>
+                    <p class="mb-6" style="color: var(--coffee-200);">Specialty coffee crafted with passion and precision in the heart of Brewville.</p>
+                    <div class="flex gap-4">
+                        <a href="#" style="color: var(--coffee-200);" class="hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" style="color: var(--coffee-200);" class="hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" style="color: var(--coffee-200);" class="hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" style="color: var(--coffee-200);" class="hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Our Story</a></li>
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Coffee Menu</a></li>
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Brewing Guides</a></li>
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Events</a></li>
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Shipping & Returns</a></li>
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Gift Cards</a></li>
+                        <li><a href="#" style="color: var(--coffee-200);" class="hover:text-white transition">Wholesale</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="mb-4" style="color: var(--coffee-200);">Subscribe for exclusive offers, brewing tips, and coffee news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="flex-grow px-4 py-2 rounded-l-lg" style="color: var(--coffee-800);">
+                        <button class="px-4 py-2 rounded-r-lg transition" style="background-color: #e0b000;">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 text-center" style="border-top: 1px solid var(--coffee-700); color: var(--coffee-400);">
+                <p>&copy; 2025 Brew Haven Café. All rights reserved.</p>
+                <div class="mt-4 flex justify-center gap-6">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Update active link
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
+       // Collapsible FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
             });
         });
+            
+            
+    
         
-        // Highlight active section in navigation
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if(pageYOffset >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // Button hover effects
-        const buttons = document.querySelectorAll('.btn');
-        buttons.forEach(button => {
-            button.addEventListener('mousedown', () => {
-                button.style.transform = 'translateY(2px)';
-                button.style.boxShadow = '0 2px 10px rgba(30, 136, 229, 0.4)';
-            });
-            
-            button.addEventListener('mouseup', () => {
-                button.style.transform = 'translateY(0)';
-                button.style.boxShadow = '0 4px 15px rgba(30, 136, 229, 0.4)';
-            });
-            
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = 'translateY(0)';
-                button.style.boxShadow = '0 4px 15px rgba(30, 136, 229, 0.4)';
-            });
-        });
     </script>
 </body>
 </html>
