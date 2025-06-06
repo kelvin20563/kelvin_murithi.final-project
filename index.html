@@ -66,7 +66,7 @@
             transition: transform 0.3s ease;
         }
         
-        /* Partners slider */
+    
         .partners-slider {
             overflow: hidden;
             position: relative;
@@ -120,7 +120,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center">
@@ -138,7 +138,7 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+
     <section id="home" class="hero-bg text-white h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h1 class="text-5xl md:text-7xl font-bold mb-6">Discover the Art of <span class="text-amber-300">Perfect Coffee</span></h1>
@@ -150,13 +150,13 @@
         </div>
     </section>
 
-    <!-- About Section -->
+
     <section id="about" class="py-20">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-4xl font-bold mb-6" style="color: var(--coffee-800);">Our Coffee Journey</h2>
                 <p class="mb-6" style="color: var(--coffee-700);">Founded in 2010, Brew Haven began as a small passion project between friends who shared a love for exceptional coffee. Today, we've grown into a community hub where coffee enthusiasts gather to savor carefully crafted beverages.</p>
-                <p class="mb-8" style="color: var(--coffee-700);">We source our beans directly from ethical farms across South America and Africa, roasting them in-house to bring out their unique characteristics. Every cup is brewed with precision and care by our skilled baristas.</p>
+                <p class="mb-8" style="color: var(--coffee-700);">We source our beans directly from ethical farms across mombasa to Nairobi,roasting them in-house to bring out their unique characteristics. Every cup is brewed with precision and care by our skilled baristas.</p>
                 <div class="flex gap-4">
                     <button class="px-6 py-2 rounded-full transition" style="background-color: var(--coffee-700); color: white;">Our Story</button>
                     <button class="border-2 px-6 py-2 rounded-full transition" style="border-color: var(--coffee-700); color: var(--coffee-700);">Meet Our Team</button>
@@ -176,7 +176,6 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
     <section id="menu" class="py-20" style="background-color: var(--coffee-200);">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
@@ -185,7 +184,7 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Menu Item 1 -->
+
                 <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg">
                     <div class="p-6">
                         <div class="flex justify-between items-start">
@@ -225,7 +224,7 @@
                     </div>
                 </div>
                 
-                <!-- Menu Item 2 -->
+            
                 <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold" style="color: var(--coffee-800);">Seasonal Specialties</h3>
@@ -262,10 +261,12 @@
                     </div>
                 </div>
                 
-                <!-- Menu Item 3 -->
+        
                 <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold" style="color: var(--coffee-800);">Pastries & Treats</h3>
+                        <span class="px-3 py-1 rounded-full text-sm" style="background-color: #fef3c7; color: #92400e;">American tastes</span>
+                        
                         <ul class="mt-6 space-y-4">
                             <li class="flex justify-between border-b pb-3" style="border-color: var(--coffee-100);">
                                 <div>
@@ -306,7 +307,7 @@
         </div>
     </section>
 
-    <!-- Trusted Partners Section -->
+
     <section id="partners" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
@@ -316,7 +317,7 @@
             
             <div class="partners-slider">
                 <div class="partners-track"><div class="relative group">
-            <!-- Controls -->
+            
             <div class="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between z-10 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <button id="prevBtn" class="bg-cafe-brown text-white p-3 rounded-full shadow-lg hover:bg-cafe-accent transition-colors">
                     <i class="fas fa-chevron-left"></i>
@@ -326,18 +327,18 @@
                 </button>
             </div>
             
-            <!-- Pause/Resume Button -->
+            
             <div class="absolute top-4 right-4 z-10">
                 <button id="pauseBtn" class="bg-white/80 backdrop-blur-sm text-cafe-brown p-2 rounded-full shadow-md hover:bg-white transition-colors">
                     <i class="fas fa-pause"></i>
                 </button>
             </div>
             
-            <!-- Carousel Container -->
+        
             <div id="carousel" class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-cafe-light overflow-hidden">
-                <!-- Logo Track 1 -->
+                
                 <div class="logo-track flex space-x-6 mb-6 animate-scroll">
-                    <!-- Partner Logos - Set 1 -->
+                    
                     <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
                         <div class="text-cafe-brown text-center">
                             <i class="fas fa-coffee text-4xl mb-2"></i>
@@ -375,7 +376,7 @@
                         </div>
                     </div>
                     
-                    <!-- Duplicate Set for Seamless Looping -->
+
                     <div class="logo-card flex-shrink-0 w-48 h-32 bg-white rounded-xl flex items-center justify-center p-4 shadow-md border border-cafe-light">
                         <div class="text-cafe-brown text-center">
                             <i class="fas fa-coffee text-4xl mb-2"></i>
@@ -415,10 +416,7 @@
                 </div>
                 
                 
-                        </div>
-
-        
-                         
+                        </div>    
                 
         </div>
     </section>
@@ -473,7 +471,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-20" style="background-color: var(--coffee-100);">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -611,7 +608,7 @@
     </footer>
 
     <script>
-       // Collapsible FAQ functionality
+    
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
